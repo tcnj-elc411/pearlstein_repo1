@@ -2,17 +2,17 @@
 
 echo
 
-pushd "$ELC411_ROOT"
 
 foreach name ( `cat "${ELC411_ROOT}/pearlstein_repo1/student_unames"` )
+    pushd "${ELC411_ROOT}/${name}"
     echo "Username: ${name}"
-    git clone "https://github.com/tcnj-elc411/${name}"
-
+    git push
+    sleep 4
     echo
     echo
+    popd
 end
 
-popd
 
 echo
 
